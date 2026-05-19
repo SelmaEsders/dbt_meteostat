@@ -44,4 +44,4 @@ SELECT	name
 FROM j_fl_from_to AS fft
 JOIN {{ref('prep_airports')}}
 on pa.faa = fft.faa
-ORDER BY name;
+ORDER BY name
