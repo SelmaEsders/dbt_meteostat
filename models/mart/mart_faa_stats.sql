@@ -8,7 +8,7 @@ WITH 	fl_from			AS (
 									,count(arr_time) AS flights_occured_dep
 									,count(DISTINCT TAIL_NUMBER ) AS unique_airplanes_dep
 									,count(DISTINCT AIRLINE) AS unique_airline_dep
-							FROM {{ref('prep_flights'}}
+							FROM {{ref('prep_flights')}}
 							GROUP BY ORIGIN
 							),
 		fl_to			AS (
@@ -20,7 +20,7 @@ WITH 	fl_from			AS (
 									,count(arr_time) AS flights_occured_arr
 									,count(DISTINCT TAIL_NUMBER ) AS unique_airplanes_arr
 									,count(DISTINCT AIRLINE) AS unique_airline_arr
-							FROM {{ref('prep_flights'}}
+							FROM {{ref('prep_flights')}}
 							GROUP BY dest
 							),
 		j_fl_from_to	AS (
